@@ -1,0 +1,16 @@
+from selenium.webdriver.common.by import By
+
+from pages.base_page import BasePage
+class LocatorsYaPage:
+    locator_ya_search = (By.XPATH, ".//div[@class='dzen-search-arrow-common__border']/div[@class='dzen-search-arrow-common__placeholder']")
+    #locator_dzen = (By.XPATH, ".//div[@aria-label ='Верхнее меню']/span[@aria-label ='Логотип Дзен']")
+
+class YaPage(BasePage):
+
+    def get_ya_search_text(self):
+        ya_search = self.find_element(LocatorsYaPage.locator_ya_search).text
+        return ya_search
+
+    # def get_dzen(self):
+    #     dzen = self.find_element(LocatorsYaPage.locator_dzen).get_property("aria-label")
+    #     return dzen
