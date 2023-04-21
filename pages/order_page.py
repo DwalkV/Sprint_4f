@@ -53,25 +53,9 @@ class OrderPage(BasePage):
     def registration(self, name, surname, address,  phone):
         self.set_name(name)
         self.set_surname(surname)
-        self.set_address(address)
-        #self.set_metro()
-        self.set_phone(phone)
-        #self.click_button_next()
+        self.set_address(address) 
+        self.set_phone(phone) 
 
-    # def set_metro(self):
-    #     self.find_element(LocatorOrderPage.locator_metro_field).click()
-    #     metro_field = self.find_element(LocatorOrderPage.locator_metro_select)
-    #     metro_field.click()
-    #     return metro_field
-
-    # def set_metro(self):
-    #     self.find_element(LocatorOrderPage.locator_metro_field).click()
-    #     sleep(10)
-    #     select = Select(self.find_element(LocatorOrderPage.locator_metro_field))
-    #     sleep(10)
-    #     select.select_by_visible_text(LocatorOrderPage.locator_metro_select)
-    #     sleep(10)
-    #     return select
 
     @allure.step('Нажимаем кнопку «Далее»')
     def click_button_next(self):
@@ -79,24 +63,11 @@ class OrderPage(BasePage):
         button_next.click()
         return button_next
 
-    # def set_data(self, date):
-    #     date_order = self.find_element(LocatorOrderPage.locator_date_order)
-    #     date_order.send_keys(date)
-    #     self.find_element(LocatorOrderPage.locator_date_order).click()
-    #     return date_order
-
     @allure.step('Проверяем статус заказа')
     def get_order_status(self):
         order_status = self.find_element(LocatorOrderPage.locator_check_status).text
         return order_status
 
-
-
-    # def about_renta(self, date):
-    #     self.find_element(LocatorOrderPage.locator_date_order).send_keys(date)
-    #     #self.find_element(LocatorOrderPage.locator_rental_periods).send_keys(period)
-    #     # self.find_element(LocatorOrderPage.locator_do_order).click()
-    #     # self.find_element(LocatorOrderPage.locator_order_agree).click()
 
     @allure.step('Нажимаем на логотип «Самокат»')
     def click_on_scooter_logo(self):
