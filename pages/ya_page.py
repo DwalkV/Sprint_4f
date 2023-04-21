@@ -10,7 +10,4 @@ class YaPage(BasePage):
     def get_ya_search_text(self):
         ya_search = self.find_element(LocatorsYaPage.locator_ya_search).text
         return ya_search
-
-    # def get_dzen(self):
-    #     dzen = self.find_element(LocatorsYaPage.locator_dzen).get_property("aria-label")
-    #     return dzen
+ 
